@@ -43,6 +43,7 @@
 <div id="buttons">
     <button id="red">Červená</button>
     <button id="blue">Modrá</button>
+    <button id="send">Poslat konfiguraci do Odoo</button>
 </div>
 
 <script type="module">
@@ -140,6 +141,17 @@ document.getElementById('blue').addEventListener('click', () => {
     cube.material.color.set(0x2196f3);
 
 });
+
+
+document.getElementById("send").addEventListener("click", () => {
+    window.parent.postMessage({
+        type: "configuration",
+        color: "red",
+        width: 5,
+        depth: 4
+    }, "*");
+});
+
 
 
 // ANIMACE
