@@ -186,7 +186,16 @@ window.addEventListener('resize', () => {
     );
 
 });
+    
 
+    
+
+window.parent.postMessage({
+    type: "configuration",
+    color: "red",
+    width: 5,
+    depth: 4
+}, "*");
 </script>
 
 </body>
